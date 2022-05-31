@@ -1,14 +1,19 @@
 import 'dotenv/config'
 
+import usuarioController from './controller/usuarioController.js'
+
 import express from 'express'
 import cors from 'cors'
 
-import {conexao} from './repository/connection.js'
+
 
 const server = express()
 server.use(cors());
+server.use(express.json())
 
-
+//CONFIG END POINTS
+    
+server.use(usuarioController);
 
 
 server.listen(process.env.PORT, 
